@@ -1,1 +1,1 @@
-# pysnake
+# That's snake like game coded in python with a little of pygame.

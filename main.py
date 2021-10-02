@@ -152,7 +152,7 @@ def new_game(screen):
     
     # game clock
     clock = pygame.time.Clock()
-    timer = game_settings.TICK_INTERVAL-1
+    timer = game_settings.TICK_INTERVAL
     
     # set few game's settings
     direction = Direction.UP

@@ -43,7 +43,7 @@ game.draw(screen, game_offset)
 You also have an example of the game implementation [here](/main.py).
 
 ## Files description
-[color_settings.py](/color_settings.py) - contains hardcoded snake color palette used in *GameGraphical* class\
+[color_settings.py](/color_settings.py) - contains hardcoded snake color palette used in ```GameGraphical``` class\
 [game.py](/game.py) - it'a a implementation of main snake-game classes
 ```python3
 GameGraphical

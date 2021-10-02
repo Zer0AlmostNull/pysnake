@@ -1,6 +1,6 @@
 # PYSnake
 
-Thats fairy simple snake like game coded in python. With graphical interface made with pygame.
+That's a fairly simple snake like game coded in python. With graphical interface made using pygame.
 
 ## A simple API
 

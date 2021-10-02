@@ -49,7 +49,7 @@ You also have an example of the game implementation [here](/main.py).
 GameGraphical
 GameBase
 ```
-[color_settings.py](/color_settings.py) - contains hardcoded snake color palette used in ```GameGraphical``` class\
+[color_settings.py](/color_settings.py) - contains hardcoded snake color palette used in ```GameGraphical``` class
 
 [main.py](/main.py) - actual snake game implementation\
 [game_settings.py](/game_settings.py) - contains settings for the implementation\

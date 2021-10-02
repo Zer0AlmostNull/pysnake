@@ -44,6 +44,7 @@ def main_menu(screen):
     pixelFont70 = pygame.freetype.Font("assets/fonts/PressStart2P-Regular.ttf", 70)
     
     # create a UI Elements acting like a buttons
+    # I've got here a little of hardcoded shit. Please do not cry.
     btnStartGame = UIElement(
         position = (game_settings.WND_WIDTH//2, 350),
         text = "Start Game",
@@ -135,7 +136,7 @@ def main_menu(screen):
         elif g >= 255:
             b, g, c = 0, 0, 0
         elif b >= 255:
-            c, b = 1,0
+            c, b = 1, 0
         
         
         # update the screen
@@ -193,15 +194,7 @@ def new_game(screen):
                 died = True
             elif return_code == ReturnCodes.DEATH_FRAME:
                 pass
-            
-            '''
-            matrix = game.arena_matrix
-            for row in matrix:
-                for cell in row:
-                    print(cell, end='')
-                print("")
-            '''
-            
+
         # draw game
         game.draw(screen, game_offset)
 
@@ -224,8 +217,7 @@ def new_game(screen):
         
         # control fps and get the interval
         timer += clock.tick(game_settings.FPS)
-        
-    
 
 # run main func
-main()
+if(__name__=="__main__"):
+    main()

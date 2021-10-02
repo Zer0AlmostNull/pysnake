@@ -2,7 +2,7 @@
 
 Thats fairy simple snake like game coded in python. With graphical interface made with pygame.
 
-## simple API
+## A simple API
 
 It's all that simple to implement own python snake game.
 ```python3

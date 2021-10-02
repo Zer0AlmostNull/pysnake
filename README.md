@@ -52,8 +52,14 @@ GameBase
 
 [main.py](/main.py) - actual snake game implementation\
 [game_settings.py](/game_settings.py) - contains settings for the implementation\
-[game_state.py](/game_state.py) - contains games states of the implementation
+[game_state.py](/game_state.py) - contains games states of the implementation\
 [ui.py](/ui.py) - contains ```UIElement``` python-pygame class for UI
+
+---------------------
+So, If you need to get only snake game API copy to your project's folder following files:
+[color_settings.py](/color_settings.py), [game.py](/game.py), [assets](/assets)
+
+GLHF
 
 
 

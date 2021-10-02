@@ -56,7 +56,7 @@ GameBase
 [ui.py](/ui.py) - contains ```UIElement``` python-pygame class for UI
 
 ---------------------
-So, If you need to get only snake game API copy to your project's folder following files:
+So, If you need to get only snake game API copy to your project's folder following files:\
 [color_settings.py](/color_settings.py), [game.py](/game.py), [assets](/assets)
 
 GLHF

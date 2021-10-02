@@ -1,5 +1,4 @@
-# ---- |-| SETTINGS FILE |*| ----
-
+# game settings for snake implementation *main.py*
 # Window Settings
 TITLE_TEXT = "Snake Game"
 
@@ -15,13 +14,3 @@ CELL_SIZE = 25
 GAME_SIZE = (15, 15)
 GAME_MEASUREMENTS = (GAME_SIZE[0]  * CELL_SIZE + GAME_SIZE[0] + 1, GAME_SIZE[1]  * CELL_SIZE + GAME_SIZE[1] + 1)
 
-# Colors Setting
-BCKG_COLOR = (16, 16, 16)
-TEXT_COLOR = (200, 200, 200)
-
-BCKG_GAME_COLOR = (0, 0, 0, 0)
-SNAKE_COLOR = (72, 92, 12)
-APPLE_COLOR = (255, 0, 0)
-GRID_COLOR = (20, 20, 20)
-FRAME_COLOR = (200, 200, 200)
-CROSS_COLOR = (255, 0, 0)

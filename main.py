@@ -3,10 +3,10 @@ from os import environ
 # hide pygame version info
 environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 
-from game import GameBase, Direction, GameGraphical, ReturnCodes
+from game import Direction, GameGraphical, ReturnCodes
 from ui import UIElement
 import pygame
-import game_settings
+import game_settings, color_settings
 from game_state import GameState
 
 def main():
@@ -48,7 +48,7 @@ def main_menu(screen):
         position = (game_settings.WND_WIDTH//2, 350),
         text = "Start Game",
         font_size = 45,
-        bg_rgb = game_settings.BCKG_COLOR,
+        bg_rgb = color_settings.BCKG_COLOR,
         text_rgb = (200, 200, 200),
         text_rgb_highlight = (255, 255, 255),
         clickedAction = GameState.GAME,
@@ -61,7 +61,7 @@ def main_menu(screen):
         position = (game_settings.WND_WIDTH//2, 400),
         text = "QUIT",
         font_size = 25,
-        bg_rgb = game_settings.BCKG_COLOR,
+        bg_rgb = color_settings.BCKG_COLOR,
         text_rgb = (200, 200, 200),
         text_rgb_highlight = (255, 255, 255),
         clickedAction = GameState.QUIT,
@@ -84,7 +84,7 @@ def main_menu(screen):
     # main window loop
     while True:
         # clear the screen
-        screen.fill(game_settings.BCKG_COLOR)
+        screen.fill(color_settings.BCKG_COLOR)
         
         # controll fps via clock
         clock.tick(game_settings.FPS)
@@ -115,7 +115,7 @@ def main_menu(screen):
             surf = screen,
             text = game_settings.TITLE_TEXT, 
             fgcolor = (r, g, b), 
-            bgcolor = game_settings.BCKG_COLOR,
+            bgcolor = color_settings.BCKG_COLOR,
             dest = (70, 100)
             )
 
@@ -157,7 +157,7 @@ def new_game(screen):
     # set few game's settings
     direction = Direction.UP
     score_offset = (int((game_settings.WND_WIDTH - game.surface.get_width()) * 0.5), 5)
-    game_offset = (score_offset[0], score_offset[1]+25+1)
+    game_offset = (score_offset[0], score_offset[1] + 26)
 
     # main game loop
     while 1:
@@ -211,8 +211,8 @@ def new_game(screen):
             screen,
             score_offset,
             f"Points: {len(game.snake_body_pos)-1}",
-            fgcolor = game_settings.TEXT_COLOR,
-            bgcolor = game_settings.BCKG_COLOR,
+            fgcolor = color_settings.TEXT_COLOR,
+            bgcolor = color_settings.BCKG_COLOR,
             size = 25)
         
         
@@ -220,7 +220,7 @@ def new_game(screen):
         pygame.display.update()
         
         # clearing out the window
-        screen.fill(game_settings.BCKG_COLOR)
+        screen.fill(color_settings.BCKG_COLOR)
         
         # control fps and get the interval
         timer += clock.tick(game_settings.FPS)

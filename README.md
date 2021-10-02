@@ -23,7 +23,7 @@ direction = Direction.UP
 game.tick(direction)
 ```
 
-where direction is an enum object
+where direction is an enum object(already precoded)
 
 ```python3
 class Direction(Enum):
@@ -41,4 +41,14 @@ game.draw(screen, game_offset)
 ```
 
 You also have an example of the game implementation [here](/main.py).
+
+## Files description
+
+[game.py][/game.py] - it'a a implementation of main snake classes like
+
+```python3
+GameGraphical
+GameBase
+```
+
 

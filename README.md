@@ -51,14 +51,14 @@ GameBase
 ```
 [color_settings.py](/color_settings.py) - contains hardcoded snake color palette used in ```GameGraphical``` class
 
-### Example
-[/example/main.py](/example/main.py) - actual snake game implementation\
-[game_settings.py](/example/game_settings.py) - contains settings for the implementation\
-[game_state.py](/example/game_state.py) - contains games states of the implementation\
-[ui.py](/example/ui.py) - contains ```UIElement``` python-pygame class for UI
+--------------
+[example/main.py](/example/main.py) - actual snake game implementation\
+[example/game_settings.py](/example/game_settings.py) - contains settings for the implementation\
+[example/game_state.py](/example/game_state.py) - contains games states of the implementation\
+[example/ui.py](/example/ui.py) - contains ```UIElement``` python-pygame class for UI
 
 ---------------------
-So, If you need to get only snake game API copy to your project's folder following files:\
+So, If you need to get only snake game API copy to your project's folder following files/folders:\
 [color_settings.py](/color_settings.py), [game.py](/game.py), [assets](/assets)
 
 GLHF ^-^

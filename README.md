@@ -40,6 +40,5 @@ game_offset = (0, 0)
 game.draw(screen, game_offset)
 ```
 
-You also have an example of the game implementation in 
-[a relative link](/main.py)
-    
+You also have an example of the game implementation [here](/main.py).
+

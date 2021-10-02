@@ -2,12 +2,23 @@ from os import environ
 
 # hide pygame version info
 environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
-
-from game import Direction, GameGraphical, ReturnCodes
-from ui import UIElement
 import pygame
-import game_settings, color_settings
+
+# inclusion of the api in parent folder
+import sys, os
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
+#
+
+
+# import 'api'
+from game import Direction, GameGraphical, ReturnCodes
+
+# other stff
+from ui import UIElement
 from game_state import GameState
+
+import game_settings, color_settings
+
 
 def main():
     

@@ -12,6 +12,8 @@
 # Local History for Visual Studio Code
 .history/
 
+
+
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
@@ -19,3 +21,6 @@
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
+
+*.pyc
+**/*.pyc

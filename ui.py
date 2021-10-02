@@ -14,8 +14,7 @@ def create_surface_with_text(text, font_size, text_rgb, bg_rgb, font_name = 'Ver
     return surface.convert_alpha()
 
 class UIElement(pygame.sprite.Sprite):
-
-
+    
     class Anchor(Enum):
         CENTER = 0
         TL = 1

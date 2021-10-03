@@ -13,7 +13,7 @@ sys.path.insert(1, os.path.join(sys.path[0], '..'))
 # import 'api'
 from game import Direction, GameGraphical, ReturnCodes
 
-# other stff
+# other stuff
 from ui import UIElement
 from game_state import GameState
 

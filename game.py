@@ -1,9 +1,6 @@
 from enum import Enum
 from random import choice
 
-import color_settings
-import pygame
-
 
 class GameBase():
     def __init__(self, arena_size: tuple = (15, 15), cell_size: tuple = 30):
@@ -111,6 +108,13 @@ class GameBase():
     
 class GameGraphical(GameBase):
     def __init__(self, arena_size: tuple = (15, 15), cell_size: tuple = 30):
+        # add modules per class only 
+        import color_settings
+        import pygame
+
+        self.pygame = pygame
+        self.color_settings = color_settings
+
         # init patrent constructor
         super().__init__(arena_size, cell_size)
 
@@ -161,9 +165,9 @@ class GameGraphical(GameBase):
             self.surface.blit(self.GRID,(0, 0))
             
             # draw head
-            pygame.draw.rect(
+            self.pygame.draw.rect(
                     self.surface,
-                    color_settings.SNAKE_COLOR,
+                    self.color_settings.SNAKE_COLOR,
                     (self.snake_body_pos[0][0] * self.cell_size + self.snake_body_pos[0][0] + 1,
                     self.snake_body_pos[0][1] * self.cell_size + self.snake_body_pos[0][1] + 1,
                     self.cell_size,
@@ -174,36 +178,36 @@ class GameGraphical(GameBase):
                 deltapos = (self.snake_body_pos[index-1][0]-self.snake_body_pos[index][0], self.snake_body_pos[index-1][1]-self.snake_body_pos[index][1])
                 
                 if deltapos[0] == -1 and deltapos[1] == 0:   
-                    pygame.draw.rect(
+                    self.pygame.draw.rect(
                         self.surface,
-                        color_settings.SNAKE_COLOR,
+                        self.color_settings.SNAKE_COLOR,
                         (self.snake_body_pos[index][0] * self.cell_size + self.snake_body_pos[index][0],
                         self.snake_body_pos[index][1] * self.cell_size + self.snake_body_pos[index][1] + 1,
                         self.cell_size+1,
                         self.cell_size)
                         )
                 elif deltapos[0] == 1 and deltapos[1] == 0:
-                    pygame.draw.rect(
+                    self.pygame.draw.rect(
                         self.surface,
-                        color_settings.SNAKE_COLOR,
+                        self.color_settings.SNAKE_COLOR,
                         (self.snake_body_pos[index][0] * self.cell_size + self.snake_body_pos[index][0] + 1,
                         self.snake_body_pos[index][1] * self.cell_size + self.snake_body_pos[index][1] + 1,
                         self.cell_size+1,
                         self.cell_size)
                         )
                 elif deltapos[0] == 0 and deltapos[1] == -1:
-                    pygame.draw.rect(
+                    self.pygame.draw.rect(
                         self.surface,
-                        color_settings.SNAKE_COLOR,
+                        self.color_settings.SNAKE_COLOR,
                         (self.snake_body_pos[index][0] * self.cell_size + self.snake_body_pos[index][0] + 1,
                         self.snake_body_pos[index][1] * self.cell_size + self.snake_body_pos[index][1],
                         self.cell_size,
                         self.cell_size+1)
                         )
                 elif deltapos[0] == 0 and deltapos[1] == 1:
-                    pygame.draw.rect(
+                    self.pygame.draw.rect(
                         self.surface,
-                        color_settings.SNAKE_COLOR,
+                        self.color_settings.SNAKE_COLOR,
                         (self.snake_body_pos[index][0] * self.cell_size + self.snake_body_pos[index][0] + 1,
                         self.snake_body_pos[index][1] * self.cell_size + self.snake_body_pos[index][1] + 1,
                         self.cell_size,
@@ -225,15 +229,15 @@ class GameGraphical(GameBase):
             
             # draw cross if died
             if self.died:              
-                pygame.draw.line(self.surface, color_settings.CROSS_COLOR, (0, 0), (self.GRID.get_width(), self.GRID.get_height()), width = 1)
-                pygame.draw.line(self.surface, color_settings.CROSS_COLOR, (0, self.GRID.get_height()), (self.GRID.get_width(), 0), width = 1)
+                self.pygame.draw.line(self.surface, self.color_settings.CROSS_COLOR, (0, 0), (self.GRID.get_width(), self.GRID.get_height()), width = 1)
+                self.pygame.draw.line(self.surface, self.color_settings.CROSS_COLOR, (0, self.GRID.get_height()), (self.GRID.get_width(), 0), width = 1)
                 
-                pixelfont = pygame.freetype.Font("assets/fonts/PressStart2P-Regular.ttf", 30)
+                pixelfont = self.pygame.freetype.Font("assets/fonts/PressStart2P-Regular.ttf", 30)
                 
                 text_rect = pixelfont.get_rect('You died!', size = 30)
                 text_rect.center = self.surface.get_rect().center 
 
-                pixelfont.render_to(self.surface, text_rect, 'You died!', color_settings.TEXT_COLOR, size = 30)
+                pixelfont.render_to(self.surface, text_rect, 'You died!', self.color_settings.TEXT_COLOR, size = 30)
                 
                 self.died_frame = True
                 

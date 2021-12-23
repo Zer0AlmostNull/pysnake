@@ -11,7 +11,7 @@ sys.path.insert(1, os.path.join(sys.path[0], '..'))
 
 
 # import 'api'
-from game import Direction, GameGraphical, ReturnCodes
+from game import Direction, SnakeWindowed
 
 # other stuff
 from ui import UIElement
@@ -158,7 +158,7 @@ def new_game(screen):
     pixelFont = pygame.freetype.Font("assets/fonts/PressStart2P-Regular.ttf", 30)
     
     # init game object
-    game = GameGraphical(
+    game = SnakeWindowed(
         arena_size = game_settings.GAME_SIZE,
         cell_size = game_settings.CELL_SIZE)
     
@@ -200,11 +200,10 @@ def new_game(screen):
             
             # game update game
             return_code = game.tick(direction)
-            if return_code == ReturnCodes.DIED:  
-                # exit after death
+            
+            if return_code[0]:
                 died = True
-            elif return_code == ReturnCodes.DEATH_FRAME:
-                pass
+
 
         # draw game
         game.draw(screen, game_offset)

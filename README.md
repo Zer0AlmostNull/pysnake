@@ -10,7 +10,7 @@ It's all that simple to implement own python snake game.
 map_width, map_height = 15, 15
 
 
-game = GameGraphical(
+game = SnakeWindowed(
     arena_size = (width, height),
     cell_size = 25)
 
@@ -23,14 +23,14 @@ direction = Direction.UP
 game.tick(direction)
 ```
 
-where direction is an enum object(already precoded)
+where direction is a predefined point object
 
 ```python3
-class Direction(Enum):
-    UP = (0, -1)
-    DOWN = (0, 1)
-    LEFT = (-1, 0)
-    RIGHT = (1, 0)
+class Direction:
+    UP = Point(0, -1)
+    DOWN = Point(0, 1)
+    LEFT = Point(-1, 0)
+    RIGHT = Point(1, 0)
 ```
 
 In order to draw the game on to the pygame screen object use:
@@ -46,9 +46,11 @@ You also have an example of the game implementation [here](/main.py).
 
 [game.py](/game.py) - it'a a implementation of main snake-game classes
 ```python3
-GameGraphical
-GameBase
+SnakeWindowed
+SnakeBasic
 ```
+[point.py](/point.py) - contains a definition of ```Point``` class
+[subconsole.py](/subconsole.py) - really weird definition of class ```console``` class
 [color_settings.py](/color_settings.py) - contains hardcoded snake color palette used in ```GameGraphical``` class
 
 --------------

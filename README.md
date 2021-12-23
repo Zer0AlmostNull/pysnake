@@ -49,9 +49,9 @@ You also have an example of the game implementation [here](/main.py).
 SnakeWindowed
 SnakeBasic
 ```
-[point.py](/point.py) - contains a definition of ```Point``` class
-[subconsole.py](/subconsole.py) - really weird definition of class ```console``` class
-[color_settings.py](/color_settings.py) - contains hardcoded snake color palette used in ```GameGraphical``` class
+[point.py](/point.py) - contains a definition of ```Point``` class\
+[subconsole.py](/subconsole.py) - really weird definition of class ```console``` class\
+[color_settings.py](/color_settings.py) - contains hardcoded snake color palette used in ```GameGraphical``` class\
 
 --------------
 [example/main.py](/example/main.py) - actual snake game implementation\
